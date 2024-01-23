@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="src/style.css" />
+        <script type="module" src="src/main.ts"></script>
+        <title>Tip calculator app</title>
+    </head>
+    <body class="flex min-h-dvh flex-col bg-neutral-light-grayish-cyan md:items-center md:justify-center">
+        <main>
+            <img src="images/logo.svg" alt="App logo" class="mx-auto py-12 md:pb-24" />
+            <section
+                class="flex max-w-3xl flex-col gap-8 rounded-t-3xl bg-neutral-white p-6 md:mx-6 md:flex-row md:gap-10 md:rounded-3xl lg:mx-0"
+            >
+                <div class="flex flex-1 flex-col gap-8">
+                    <div class="space-y-1">
+                        <label class="text-neutral-dark-grayish-cyan" for="bill"> Bill </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 flex items-center pl-4">
+                                <img src="images/icon-dollar.svg" alt="Dollar icon" />
+                            </div>
+                            <input
+                                type="number"
+                                class="w-full rounded-md bg-neutral-very-light-grayish-cyan p-2 pr-4 text-right text-xl text-neutral-very-dark-cyan outline-none hover:outline-2 hover:outline-primary-strong-cyan active:outline-primary-strong-cyan"
+                                id="bill"
+                                placeholder="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="text-neutral-dark-grayish-cyan"> Select Tip % </label>
+                        <div class="grid grid-cols-2 gap-4 md:grid-cols-3" id="selectTip">
+                            <button
+                                class="hover:bg-hover rounded-md bg-neutral-very-dark-cyan py-2 text-xl text-neutral-white transition hover:text-neutral-very-dark-cyan"
+                            >
+                                5%
+                            </button>
+                            <button
+                                class="hover:bg-hover rounded-md bg-neutral-very-dark-cyan py-2 text-xl text-neutral-white transition hover:text-neutral-very-dark-cyan"
+                            >
+                                10%
+                            </button>
+                            <button
+                                class="hover:bg-hover rounded-md bg-neutral-very-dark-cyan py-2 text-xl text-neutral-white transition hover:text-neutral-very-dark-cyan"
+                            >
+                                15%
+                            </button>
+                            <button
+                                class="hover:bg-hover rounded-md bg-neutral-very-dark-cyan py-2 text-xl text-neutral-white transition hover:text-neutral-very-dark-cyan"
+                            >
+                                25%
+                            </button>
+                            <button
+                                class="hover:bg-hover rounded-md bg-neutral-very-dark-cyan py-2 text-xl text-neutral-white transition hover:text-neutral-very-dark-cyan"
+                            >
+                                50%
+                            </button>
+                            <label class="hidden" for="customInput"></label>
+                            <input
+                                type="number"
+                                placeholder="Custom"
+                                class="rounded-md bg-neutral-very-light-grayish-cyan p-2 text-right text-xl text-neutral-very-dark-cyan outline-none placeholder:text-neutral-grayish-cyan hover:outline-2 hover:outline-primary-strong-cyan active:outline-primary-strong-cyan"
+                                id="customInput"
+                            />
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-neutral-dark-grayish-cyan" for="numberOfPeople"> Number of People </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 flex items-center pl-4">
+                                <img src="images/icon-person.svg" alt="Person icon" />
+                            </div>
+                            <input
+                                type="number"
+                                class="w-full rounded-md bg-neutral-very-light-grayish-cyan p-2 pr-4 text-right text-xl text-neutral-very-dark-cyan outline-none hover:outline-2 hover:outline-primary-strong-cyan active:outline-primary-strong-cyan"
+                                id="numberOfPeople"
+                                placeholder="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-1 flex-col gap-8 rounded-xl bg-neutral-very-dark-cyan p-4 pt-10 md:p-8 md:pt-12">
+                    <div class="flex items-center justify-between">
+                        <article>
+                            <h2 class="text-sm text-neutral-white">Tip Amount</h2>
+                            <p class="text-xs text-neutral-grayish-cyan">/ person</p>
+                        </article>
+                        <span class="text-3xl text-primary-strong-cyan md:text-4xl" id="tipAmount">$0.00</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <article>
+                            <h2 class="text-sm text-neutral-white">Total</h2>
+                            <p class="text-xs text-neutral-grayish-cyan">/ person</p>
+                        </article>
+                        <span class="text-3xl text-primary-strong-cyan md:text-4xl" id="total">$0.00</span>
+                    </div>
+                    <button
+                        class="bg-disabled w-full rounded-md border-r-neutral-very-dark-cyan py-2 text-lg uppercase text-neutral-very-dark-cyan transition md:mt-auto"
+                        id="resetButton"
+                        disabled
+                    >
+                        Reset
+                    </button>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
